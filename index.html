@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLASH NEWS WEBSITE BY AMOGH</title>
+ 
+<style type="text/css">
+
+#top{
+    margin-top: 2em;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+    position: relative;
+    right: 5em;
+}
+#topleft{
+    width: 10em;
+    float: left;
+}
+#topleft ul{
+    margin: 0;
+    padding: 0;
+}
+li{
+    display: block;
+    width: 10em;
+    text-align: center;
+}
+li button{
+    border-width: thin;
+    border-radius: 3px;
+    border-color: black;
+    width: 10em;
+    display: block;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin: auto;
+}
+li button:hover {
+    background-color: orange;
+    color: white;
+}
+li .selected{
+    color:white;
+    background-color:green;
+}
+li .unselected{
+    color: black;
+    background-color:rgb(174, 194, 193);
+}
+form{
+    text-align: center;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    background-color: rgb(174, 194, 193);
+    margin-left: 2em;
+    width: 43em;
+}
+form label, input, select{
+    margin: 0.5em;
+}
+label spam{
+    color: red;
+}
+#topright{
+    float: left;
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-bottom: 0em;
+}
+#slide{
+    float:left;
+}
+.slide{
+    float:left;
+    position:relative;
+    height: 204px;
+    width: 350px;
+}
+img{
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover
+}
+.bottomText{
+    padding: 0em;
+    color: white;
+    position: absolute;
+    bottom: 0em;
+    text-align: center;
+    background-color: rgb(80, 80, 80, 0.5);
+    width: 330px;
+    padding: 10px;
+    font-size: 5px;
+    font-size: xx-small;
+}
+.bottomText p{
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.bottomText h2{
+    margin-bottom: 0;
+    margin-top: 0;
+}
+#bottom{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+}
+#bbc{
+    overflow: hidden;
+}
+#bbctitle{
+    margin-top: 1em;
+    border-bottom:1px dotted;
+    margin-left:auto;
+    margin-right:auto;
+}
+#bbctitle h1{
+    margin-bottom: 5px;
+    font-size: x-large;
+    color:white;
+}
+#bbccontent{
+    border-top:1px solid;
+    margin-left:auto;
+    margin-right:auto;
+    text-align: center;
+    display: inline-block;
+}
+#toi{
+    overflow: hidden;
+}
+#toititle{
+    margin-top: 1em;
+    border-bottom:1px dotted;
+    margin-left:auto;
+    margin-right:auto;
+}
+#toicontent{
+    border-top: 1px solid;
+    margin-left:auto;
+    margin-right:auto;
+    display: inline-block;
+}
+#toititle h1{
+    margin-bottom: 5px;
+    font-size: x-large;
+    color:white;
+}
+.card{
+    border: solid;
+    border-width: thin;
+    border-radius: 5px;
+    border-color: black;
+    width: 150px;
+    height: 350px;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+    background-color: rgb(230, 230, 230);
+    display: inline-block;
+    overflow: hidden;
+}
+.card img{
+    border-radius: 5px;
+    width: 100%;
+    height:6em;
+    object-fit: cover
+}
+.card h2{
+    font-size: small;
+}
+.card p{
+    margin: 2px;
+    font-size: x-small;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#my_dataviz{
+    margin-left: 1em;
+    float: left;
+    background-color:rgb(174, 194, 193);
+}
+.card a{
+    text-decoration: none;
+    color: black;
+}
+.box{
+    margin-bottom: 0.5em;
+    background-color: rgb(174, 194, 193);;
+    overflow: auto;
+    border: solid;
+    border-width: thin;
+    border-color: black;
+    border-radius: 5px;
+    display: inline-block;
+    text-align: left;
+}
+.box:hover{
+    box-shadow: 5px 10px 18px #888888;
+}
+#searchResult img{
+    width: 60px;
+    height: 60px;
+    object-fit: cover
+}
+#searchResult .left{
+    margin: 1em;
+    float: left;
+}
+#searchResult .right{
+    margin: 1em;
+    width: 450px;
+    float: left;
+    font-size: x-small;
+}
+form button{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 6px;
+}
+#searchResult button{
+    color: black;
+    background-color:rgb(230, 230, 230);
+    border: none;
+    border-radius: 3px;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+#searchResult button:hover{
+    background-color: green;
+    color: white;
+}
+.box spam{
+    font-weight: bold;
+}
+.box .cancel{
+    position: relative;
+    font-size: large;
+    bottom: 8px;
+    width: 1em;
+    cursor: pointer;
+    float: right;
+}
+#category{
+    width: 110px;
+}
+#source{
+    width: 110px;
+}
+#searchResult{
+    margin-top: 20px;
+}
+.truncate p{
+    width:450px;
+    text-overflow: ellipsis;
+    height: 15px;
+    overflow: hidden;
+    display: block;
+    white-space: nowrap;
+}
+.truncate h2{
+    width:450px;
+    text-overflow: ellipsis;
+    height: 40px;
+    overflow: hidden;
+    display: block;
+}
+
+
+body{
+   background-image:url({{ url_for('static', filename='news_website.jpeg')}})
+}
+
+
+</style>
+</head>
+<body onload=showNews()>
+ 
+    <div id="top">
+    <div id="topleft">
+        <ul style="list-style-type:none;">
+            <li><button id = "news" class = "selected" href="" onclick="showNews()">HOME PAGE</button></li>
+            <li><button id = "search" class = "unselected" href="" onclick="showSearch()">SEARCH NEWS</button></li>
+        </ul>
+    </div>
+    <div id="topright">
+    </div>
+    </div>
+    <div id="bottom">
+        <div id="bbc"></div>
+        <div id="toi"></div>
+        <div id="searchResult"></div>
+    </div>
+    <script type="text/javascript">
+        var timer;
+
+        //show Google News page
+        function showNews(){
+            document.getElementById("news").className = "selected";
+            document.getElementById("search").className = "unselected";
+            var html_text = "<div id=\"slide\"></div>"+
+                            "<div id=\"my_dataviz\"></div>";
+            document.getElementById("topright").innerHTML = html_text;
+            const topurl="top_headlines";
+            getNews(topurl, 1);
+            const wordurl = "cloud_words"
+            getWords(wordurl);
+            const cnnurl = "top_bbc";
+            getNews(cnnurl, 2);
+            const foxurl = "top_toi";
+            getNews(foxurl, 3);
+            document.getElementById("searchResult").innerHTML = "";
+        }
+
+        //function for calling blackend and get JSON object to load news
+        function getNews(url, code){
+            var xmlhttp=new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function(){
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    if(xmlhttp.responseText==""){
+                        alert("empty file!");
+                        return null;
+                    }
+                    else{
+                        var jsonObj=JSON.parse(xmlhttp.responseText);
+                        if(jsonObj.status != "ok"){
+                            alert(jsonObj.message);
+                        }
+                        else if(jsonObj.totalResults == 0){
+                            alert("no top news found!");
+                        }
+                        else{
+                            switch (code) {
+                                case 1:
+                                    loadTopPicture(jsonObj);
+                                    break;
+                                case 2:
+                                    showTopbbc(jsonObj);
+                                    break;
+                                case 3:
+                                    showToptoi(jsonObj);
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+                    }
+                }
+            };
+            xmlhttp.open("GET",url,true);
+            try{
+                xmlhttp.send();
+            }catch(err){
+                alert("back end can not get json file!");
+                return null;
+            }
+        }
+
+        //function to get top 30 frequent word from backend
+        function getWords(url){
+            var xmlhttp=new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function(){
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    if(xmlhttp.responseText==""){
+                        alert("empty words!");
+                        return null;
+                    }
+                    else{
+                        var jsonObj=JSON.parse(xmlhttp.responseText);
+                        wordCloud(jsonObj);
+                    }
+                }
+            };
+            xmlhttp.open("GET",url,true);
+            try{
+                xmlhttp.send();
+            }catch(err){
+                alert("back end can not get frequent words!");
+                return null;
+            }
+        }
+
+        //load news for top slides, change news for the certain interval
+        function loadTopPicture(jsonObj){
+            var articles = jsonObj.articles;
+            var x = 0;
+            var url = [];
+            var image = [];
+            var title = [];
+            var description = [];
+            var count = 0;
+            for(var i in articles) {
+                if (count >= 5) {
+                    break;
+                }
+                if (!articles[i].hasOwnProperty("author") || articles[i].author == "" || articles[i].author == null) {
+                    continue;
+                }
+                else if (!articles[i].hasOwnProperty("description") || articles[i].description == "" || articles[i].description == null) {
+                    continue;
+                }
+                else if (!articles[i].hasOwnProperty("title") || articles[i].title == "" || articles[i].title == null) {
+                    continue;
+                }
+                else if (!articles[i].hasOwnProperty("url") || articles[i].url == "" || articles[i].url == null) {
+                    continue;
+                }
+                else if (!articles[i].hasOwnProperty("urlToImage") || articles[i].urlToImage == "" || articles[i].urlToImage == null) {
+                    continue;
+                }
+                else if (!articles[i].hasOwnProperty("publishedAt") || articles[i].publishedAt == "" || articles[i].publishedAt == null) {
+                    continue;
+                }
+                else if (!articles[i].hasOwnProperty("source") || articles[i].source == "" || articles[i].source == null) {
+                    continue;
+                }
+                else {
+                    var patt = /^http/; //check if the image url is valid
+                    if (!patt.test(jsonObj.articles[i].urlToImage)) {
+                        jsonObj.articles[i].urlToImage = "https:" + jsonObj.articles[i].urlToImage;
+                    }
+                    url[count] = jsonObj.articles[i].url;
+                    image[count] = jsonObj.articles[i].urlToImage;
+                    title[count] = jsonObj.articles[i].title;
+                    description[count] = jsonObj.articles[i].description;
+                    count += 1;
+                }
+            }
+            var html_text =
+                "<div class=\"slide\">"+
+                    "<a href=\""+url[0]+"\" target=\"_blank\"\">"+
+                    "<img src="+image[0]+
+                        " alt=\"loading...\">"+
+                    "<div class=\"bottomText\">"+
+                        "<h2>"+title[0]+"</h2>"+
+                        "<p>"+description[0]+"</p>"+
+                    "</div>"+
+                    "</a>"+
+                "</div>";
+                document.getElementById("slide").innerHTML = html_text;
+            timer = setInterval(displayNextSlide, 3000);
+            
+            //change current slide to next
+            //change to first slide if reaches the end
+            function displayNextSlide(){
+                x = (x === 4) ? 0 : x + 1;
+                var html_text =
+                "<div class=\"slide\">"+
+                    "<a href=\""+url[x]+"\" target=\"_blank\"\">"+
+                    "<img src="+image[x]+
+                        " alt=\"loading...\">"+
+                    "<div class=\"bottomText\">"+
+                        "<h2>"+title[x]+"</h2>"+
+                        "<p>"+description[x]+"</p>"+
+                    "</div>"+
+                    "</a>"+
+                "</div>";
+                document.getElementById("slide").innerHTML = html_text;
+            }
+        }
+
+        //show bbc news
+        function showTopbbc(jsonObj){
+            var html_text =
+                "<div id=\"bbctitle\"><h1>BBC News</h1></div>"+
+                "<div id=\"bbccontent\">";
+            var articles = jsonObj.articles;
+            var count = 0;
+            for(var i in articles){
+                if(count >= 4){
+                    break;
+                }
+                if (!articles[i].hasOwnProperty("author") || articles[i].author == "" || articles[i].author == null) {
+                    continue;
+                }
+                else if (!articles[i].hasOwnProperty("description") || articles[i].description == "" || articles[i].description == null) {
+                    continue;
+                }
+                else if (!articles[i].hasOwnProperty("title") || articles[i].title == "" || articles[i].title == null) {
+                    continue;
+                }
+                else if (!articles[i].hasOwnProperty("url") || articles[i].url == "" || articles[i].url == null) {
+                    continue;
+                }
+                else if (!articles[i].hasOwnProperty("urlToImage") || articles[i].urlToImage == "" || articles[i].urlToImage == null) {
+                    continue;
+                }
+                else if (!articles[i].hasOwnProperty("publishedAt") || articles[i].publishedAt == "" || articles[i].publishedAt == null) {
+                    continue;
+                }
+                else if (!articles[i].hasOwnProperty("source") || articles[i].source == "" || articles[i].source == null) {
+                    continue;
+                }
+                else{
+                    count += 1;
+                    var patt = /^http/; //check if the image url is valid
+                    if(!patt.test(jsonObj.articles[i].urlToImage)){
+                        jsonObj.articles[i].urlToImage = "https:" + jsonObj.articles[i].urlToImage;
+                    }
+                    html_text+="<div class=\"card\">"+
+                        "<a href=\""+jsonObj.articles[i].url+"\" target=\"_blank\"\">"+
+                        "<img src="+jsonObj.articles[i].urlToImage+" alt=\"loading...\">"+
+                        "<h2>"+jsonObj.articles[i].title+"</h2>"+
+                        "<p>"+jsonObj.articles[i].description+"</p>"+
+                        "</a>"+
+                    "</div>";
+                }
+            }
+            html_text+="</div>";
+            document.getElementById("bbc").innerHTML = html_text;
+        }
+
+        //show toi news
+        function showToptoi(jsonObj){
+            var html_text =
+                "<div id=\"toititle\"><h1>Times of India</h1></div>"+
+                "<div id=\"toicontent\">";
+            var articles = jsonObj.articles;
+            var count = 0;
+            for(var i in articles){
+                if(count >= 4){
+                    break;
+                }
+                if (!articles[i].hasOwnProperty("author") || articles[i].author == "" || articles[i].author == null) {
+                    continue;
+                }
+                else if (!articles[i].hasOwnProperty("description") || articles[i].description == "" || articles[i].description == null) {
+                    continue;
+                }
+                else if (!articles[i].hasOwnProperty("title") || articles[i].title == "" || articles[i].title == null) {
+                    continue;
+                }
+                else if (!articles[i].hasOwnProperty("url") || articles[i].url == "" || articles[i].url == null) {
+                    continue;
+                }
+                else if (!articles[i].hasOwnProperty("urlToImage") || articles[i].urlToImage == "" || articles[i].urlToImage == null) {
+                    continue;
+                }
+                else if (!articles[i].hasOwnProperty("publishedAt") || articles[i].publishedAt == "" || articles[i].publishedAt == null) {
+                    continue;
+                }
+                else if (!articles[i].hasOwnProperty("source") || articles[i].source == "" || articles[i].source == null) {
+                    continue;
+                }
+                else{
+                    count += 1;
+                    var patt = /^http/; //check if the image url is valid
+                    if(!patt.test(jsonObj.articles[i].urlToImage)){
+                        jsonObj.articles[i].urlToImage = "https:" + jsonObj.articles[i].urlToImage;
+                    }
+                    html_text+="<div class=\"card\">"+
+                        "<a href=\""+jsonObj.articles[i].url+"\" target=\"_blank\"\">"+
+                        "<img src="+jsonObj.articles[i].urlToImage+" alt=\"loading...\">"+
+                        "<h2>"+jsonObj.articles[i].title+"</h2>"+
+                        "<p>"+jsonObj.articles[i].description+"</p>"+
+                        "</a>"+
+                    "</div>";
+                }
+            }
+            html_text+="</div>";
+            document.getElementById("toi").innerHTML = html_text;
+        }
+
+        //show search page
+        function showSearch(){
+            document.getElementById("news").className = "unselected";
+            document.getElementById("search").className = "selected";
+            clearInterval(timer);
+            var html_text = "<form id=\"myForm\" method =\"GET\" action=\"search\">"+
+                "<label for=\"keyword\">Keyword<spam>*</spam></label>"+
+                "<input type=\"text\" id=\"keyword\" name=\"keyword\" required>"+
+                "<label for=\"from\">From<spam>*</spam></label>"+
+                "<input type=\"date\" id=\"from\" name=\"from\" required>"+
+                "<label for=\"to\">To<spam>*</spam></label>"+
+                "<input type=\"date\" id=\"to\" name=\"to\" required>"+
+                "<br>"+
+                "<label for=\"category\">Category</label>"+
+                "<select name=\"category\" id=\"category\" onchange=\"showSource()\">"+
+                    "<option value=\"all\">all</option>"+
+                    "<option value=\"business\">business</option>"+
+                    "<option value=\"entertainment\">entertainment</option>"+
+                    "<option value=\"general\">general</option>"+
+                    "<option value=\"health\">health</option>"+
+                    "<option value=\"science\">science</option>"+
+                    "<option value=\"sports\">sports</option>"+
+                    "<option value=\"technology\">technology</option>"+
+                "</select>"+
+                "<label for=\"source\">Source</label>"+
+                "<select name=\"source\" id=\"source\">"+
+                "    <option value=\"all\">all</option>"+
+                "</select>"+
+                "<br>"+
+                "<button type=\"button\" id=\"submit\" onclick=\"searchNews()\" value=\"Search\">Search</button>"+
+                "<button type=\"button\" onclick=\"resetNews()\" value=\"Clear\">Clear</button>"+
+                "</form>";
+            document.getElementById("topright").innerHTML = html_text;
+            document.getElementById("bbc").innerHTML = "";
+            document.getElementById("toi").innerHTML = "";
+            document.getElementById("submit").addEventListener("click", function(event){
+                event.preventDefault()
+            });
+            loadDate();
+            showSource();
+        }
+
+        //show source for selected new category
+        function showSource(){
+            var url = "source"
+            if(document.getElementById("category").value != "all"){
+                url += "?category=" + document.getElementById("category").value;
+            }
+            var xmlhttp=new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function(){
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    if(xmlhttp.responseText==""){
+                        alert("no source found!");
+                        return null;
+                    }
+                    else{
+                        var jsonObj=JSON.parse(xmlhttp.responseText);
+                        if(jsonObj.status != "ok"){
+                            alert(jsonObj.message);
+                        }
+                        else{
+                            html_text = "<option value=\"all\">all</option>";
+                            var sources = jsonObj.sources;
+                            var map = new Map();
+                            for(var i in sources){
+                                if(sources[i].name != null && sources[i].id != null){
+                                    map.set(sources[i].name, sources[i].id);
+                                }
+                            }
+                            map.forEach(getOne);
+                            function getOne(value, key){
+                                html_text += "<option value=\""+ value + "\">" + key + "</option>";
+                            }
+                            document.getElementById("source").innerHTML = html_text;
+                        }
+                    }
+                }
+            };
+            xmlhttp.open("GET",url,true);
+            try{
+                xmlhttp.send();
+            }catch(err){
+                alert("back end can not get frequent words!");
+                return null;
+            }
+        }
+
+        //set from and to block in the form
+        function loadDate(){
+            var date = new Date();
+            var predate = new Date();
+            predate.setDate(date.getDate() - 7);
+            date.setHours(0);
+            predate.setHours(0);
+            document.getElementById("from").valueAsDate = predate;
+            document.getElementById("to").valueAsDate = date;
+        }
+
+
+        //reset form
+        function resetNews(){
+            document.getElementById("keyword").value = "";
+            loadDate();
+            document.getElementById("category").value = "all";
+            document.getElementById("source").value = "all";
+            document.getElementById("searchResult").innerHTML = "";
+        }
+
+        //date validation
+        function checkDate(){
+            var fromDate= document.getElementById("from").value;
+            var toDate = document.getElementById("to").value;
+            if(fromDate <= toDate){
+                return true;
+            }
+            else{
+                alert("Incorrent time");
+                return false;
+            }
+        }
+
+        //search news according to the form information
+        function searchNews(){
+            if(document.forms["myForm"].reportValidity() && checkDate()){
+                var url = "search?keyword=" + document.getElementById("keyword").value +
+                        "&from=" + document.getElementById("from").value +
+                        "&to=" + document.getElementById("to").value +
+                        "&category=" + document.getElementById("category").value;
+                if(document.getElementById("source").value != "all"){
+                    url += "&source=" + document.getElementById("source").value;
+                }
+                var xmlhttp=new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function(){
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                        if(xmlhttp.responseText==""){
+                            alert("empty result!");
+                            return null;
+                        }
+                        else{
+                            var jsonObj=JSON.parse(xmlhttp.responseText);
+                            if(jsonObj.status != "ok"){
+                                alert(jsonObj.message);
+                            }
+                            else{
+                                showSearchResult(jsonObj);
+                            }
+                        }
+                    }
+                };
+                xmlhttp.open("GET",url,true);
+                try{
+                    xmlhttp.send();
+                }catch(err){
+                    alert("back end can not get frequent words!");
+                    return null;
+                }
+            }
+        }
+        var lessHtmlText;
+        var moreHtmlText;
+        var resultUrl;
+        var resultImage;
+        var resultTitle;
+        var resultDescription;
+        var resultAuthor;
+        var resultSource;
+        var resultYear;
+        var resultMonth;
+        var resultDay;
+
+        function showSearchResult(jsonObj){
+            lessHtmlText = "";
+            moreHtmlText = "";
+            resultUrl = [];
+            resultImage = [];
+            resultTitle = [];
+            resultDescription = [];
+            resultAuthor = [];
+            resultSource = [];
+            resultYear = [];
+            resultMonth = [];
+            resultDay = [];
+            if(jsonObj.totalResults == 0){
+                lessHtmlText+= "<div id=\"noResult\">No results</div>"
+                document.getElementById("searchResult").innerHTML = lessHtmlText;
+            }
+            else{
+                var articles = jsonObj.articles;
+                var count = 0;
+                for(var i in articles){
+                    if (!articles[i].hasOwnProperty("author") || articles[i].author == "" || articles[i].author == null) {
+                        continue;
+                    }
+                    else if (!articles[i].hasOwnProperty("description") || articles[i].description == "" || articles[i].description == null || articles[i].description.charAt(0) == '<') {
+                        continue;
+                    }
+                    else if (!articles[i].hasOwnProperty("title") || articles[i].title == "" || articles[i].title == null) {
+                        continue;
+                    }
+                    else if (!articles[i].hasOwnProperty("url") || articles[i].url == "" || articles[i].url == null) {
+                        continue;
+                    }
+                    else if (!articles[i].hasOwnProperty("urlToImage") || articles[i].urlToImage == "" || articles[i].urlToImage == null) {
+                        continue;
+                    }
+                    else if (!articles[i].hasOwnProperty("publishedAt") || articles[i].publishedAt == "" || articles[i].publishedAt == null) {
+                        continue;
+                    }
+                    else if (!articles[i].hasOwnProperty("source") || articles[i].source == "" || articles[i].source == null) {
+                        continue;
+                    }
+                    else{
+                        var patt = /^http/; //check if the image url is valid
+                        if(!patt.test(jsonObj.articles[i].urlToImage)){
+                            jsonObj.articles[i].urlToImage = "https:" + jsonObj.articles[i].urlToImage;
+                        }
+
+                        //save news information for showing news detail
+                        resultImage[count] = jsonObj.articles[i].urlToImage;
+                        resultTitle[count] = jsonObj.articles[i].title;
+                        resultAuthor[count] = jsonObj.articles[i].author;
+                        resultSource[count] = jsonObj.articles[i].source.name;
+                        resultYear[count] = jsonObj.articles[i].publishedAt.substring(0,4);
+                        resultMonth[count] = jsonObj.articles[i].publishedAt.substring(5,7);
+                        resultDay[count] = jsonObj.articles[i].publishedAt.substring(8,10);
+                        resultDescription[count] = jsonObj.articles[i].description;
+                        resultUrl[count] = jsonObj.articles[i].url;
+                        count += 1;
+
+                        //generate two html_text for showLess and showMore function
+                        if(count <= 5){
+                            lessHtmlText+="<div class=\"box\" onclick=\"showDetail(event)\">"+
+                            "<div class=\"left\">"+
+                            "<img src="+jsonObj.articles[i].urlToImage+" alt=\"loading...\">"+
+                            "</div>"+
+                            "<div class=\"right\">"+
+                            "<div class=\"truncate\"><h2>"+jsonObj.articles[i].title+"</h2></div>"+
+                            "<div class=\"truncate\"><p>"+jsonObj.articles[i].description+"</p></div>"+
+                            "</div>"+
+                            "</div>"+
+                            "<br>";
+
+                            moreHtmlText+="<div class=\"box\" onclick=\"showDetail(event)\">"+
+                            "<div class=\"left\">"+
+                            "<img src="+jsonObj.articles[i].urlToImage+" alt=\"loading...\">"+
+                            "</div>"+
+                            "<div class=\"right\">"+
+                            "<div class=\"truncate\"><h2>"+jsonObj.articles[i].title+"</h2></div>"+
+                            "<div class=\"truncate\"><p>"+jsonObj.articles[i].description+"</p></div>"+
+                            "</div>"+
+                            "</div>"+
+                            "<br>";
+                        }
+                        else if(count <= 15){
+                            moreHtmlText+="<div class=\"box\" onclick=\"showDetail(event)\">"+
+                            "<div class=\"left\">"+
+                            "<img src="+jsonObj.articles[i].urlToImage+" alt=\"loading...\">"+
+                            "</div>"+
+                            "<div class=\"right\">"+
+                            "<div class=\"truncate\"><h2>"+jsonObj.articles[i].title+"</h2></div>"+
+                            "<div class=\"truncate\"><p>"+jsonObj.articles[i].description+"</p></div>"+
+                            "</div>"+
+                            "</div>"+
+                            "<br>";
+                        }
+                        else{
+                            break;
+                        }
+
+                    }
+                }
+                if(count == 0){ //no news found
+                    lessHtmlText = "<div id=\"noResult\">No results</div>"
+                    document.getElementById("searchResult").innerHTML = lessHtmlText;
+                }
+                if(count > 5){
+                    lessHtmlText += "<button id=\"showMore\" onclick=\"showMore()\">Show More</button>"
+                    moreHtmlText += "<button id=\"showMore\" onclick=\"showLess()\">Show Less</button>"
+                }
+                document.getElementById("searchResult").innerHTML = lessHtmlText;
+            }
+        }
+
+        //show 20 news at maximum
+        function showMore(){
+            document.getElementById("searchResult").innerHTML = moreHtmlText;
+        }
+
+        //show 5 news at maximum
+        function showLess(){
+            document.getElementById("searchResult").innerHTML = lessHtmlText;
+        }
+
+        //when user clicks on a news box, show its detail
+        function showDetail(event) {
+            var e = event.target;
+            while(e.className != "box"){
+                e = e.parentElement;
+            }
+            var boxes = document.getElementsByClassName("box");
+            for(var i in boxes){
+                if(boxes[i] === e){
+                    html_text = "<div class=\"cancel\" onclick=\"cancel(event)\">&#10006</div>"+
+                            "<h2>"+resultTitle[i]+"</h2>"+
+                            "<p><spam>Author: </spam>"+resultAuthor[i]+"</p>"+
+                            "<p><spam>Source: </spam>"+resultSource[i]+"</p>"+
+                            "<p><spam>Date: </spam>"+resultMonth[i]+"/"+resultDay[i]+"/"+resultYear[i]+"</p>"+
+                            "<p>"+resultDescription[i]+"</p>"+
+                            "<a href=\"" + resultUrl[i]+"\" target=\"_blank\">See Origional Post</a>";
+                     e.getElementsByClassName("right")[0].innerHTML = html_text;
+                }
+            }
+        }
+
+        //hide news detail when user clicks cross button
+        function cancel(event){
+            event.stopPropagation();
+            var e = event.target;
+            while(e.className != "box"){
+                e = e.parentElement;
+            }
+            var boxes = document.getElementsByClassName("box");
+            for(var i in boxes){
+                if(boxes[i] === e){
+                    html_text = "<div class=\"truncate\"><h2>"+resultTitle[i]+"</h2></div>"+
+                            "<div class=\"truncate\"><p>"+resultDescription[i]+"</p></div>";
+                     e.getElementsByClassName("right")[0].innerHTML = html_text;
+                }
+            }
+        }
+    </script>
+    <!-- Load d3.js -->
+    <script src="https://d3js.org/d3.v4.js"></script>
+
+    <!-- Load d3-cloud -->
+    <script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3.layout.cloud.js"></script>
+
+    <!-- Create a div where the graph will take place -->
+    <script>
+        function getSize(count){
+            if(count > 20){
+                return "25";
+            }
+            else if(count > 10){
+                return "18";
+            }
+            else if(count > 5){
+                return "12";
+            }
+            else{
+                return "7";
+            }
+        }
+        function wordCloud(jsonObj){
+        var wordFreq = jsonObj.frequency;
+        // List of words
+        var myWords = []
+        for(var i in wordFreq){
+            myWords.push({word: wordFreq[i].word, size: getSize(wordFreq[i].count)})
+        }
+
+        // set the dimensions and margins of the graph
+        var margin = {top: 10, right: 10, bottom: 10, left: 10},
+            width = 200 - margin.left - margin.right,
+            height = 200 - margin.top - margin.bottom;
+
+        // append the svg object to the body of the page
+        var svg = d3.select("#my_dataviz").append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+          .append("g")
+            .attr("transform",
+                  "translate(" + margin.left + "," + margin.top + ")");
+
+        // Constructs a new cloud layout instance. It run an algorithm to find the position of words that suits your requirements
+        // Wordcloud features that are different from one word to the other must be here
+        var layout = d3.layout.cloud()
+          .size([width, height])
+          .words(myWords.map(function(d) { return {text: d.word, size:d.size}; }))
+          .padding(5)        //space between words
+          .rotate(function() { return ~~(Math.random() * 2) * 90; })
+          .fontSize(function(d) { return d.size; })      // font size of words
+          .on("end", draw);
+        layout.start();
+
+        // This function takes the output of 'layout' above and draw the words
+        // Wordcloud features that are THE SAME from one word to the other can be here
+        function draw(words) {
+          svg
+            .append("g")
+              .attr("transform", "translate(" + layout.size()[0] / 2 + "," + layout.size()[1] / 2 + ")")
+              .selectAll("text")
+                .data(words)
+              .enter().append("text")
+                .style("font-size", function(d) { return d.size + "px"; })
+                .style("fill", "#000000")
+                .attr("text-anchor", "middle")
+                .style("font-family", "Impact")
+                .attr("transform", function(d) {
+                  return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+                })
+                .text(function(d) { return d.text; });
+        }
+    }
+    </script>
+</body>
+</html>
